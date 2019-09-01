@@ -1,5 +1,6 @@
 @import "_normalize";
 @import "_variables";
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 
 html {
@@ -11,6 +12,62 @@ html {
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+
+position: relative;
+width: 1440px;
+height: 720px;
+
+background: #2D2241;
+}
+
+.editor__heading {
+  font-family: Open Sans;
+font-style: normal;
+font-weight: 200;
+font-size: 32px;
+line-height: 48px;
+color: #fff;
+font-family: 'Pacifico', cursive;
+}
+
+.editor__titlebox{
+  position: absolute;
+width: 297.53px;
+height: 50.96px;
+left: 980.44px;
+top: 369px;
+}
+
+.editor__textarea{
+  position: absolute;
+width: 500px;
+height: 320px;
+left: 984px;
+top: 445px;
+border-radius: 1%;
+
+}
+
+.editor__button{
+  width: 80px;
+  height: 27px;
+  
+}
+
+.editor__button--load {
+  left: 1304px;
+  top: 777px;
+  position: absolute;
+  border-radius: 10%;
+  background: #2F80ED;
+  border-color: #2F80ED;
+}
+
+.editor__button--save {
+  position: absolute;
+  left: 1400px; //1400
+  top: 777px;
+  background: #27AE60;
+  border-radius: 10%;
+  border-color: #27AE60;
 }
