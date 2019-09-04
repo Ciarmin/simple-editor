@@ -12,62 +12,76 @@ html {
 }
 
 body {
-
-position: relative;
-width: 1440px;
-height: 720px;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+//position: relative;
+//width: 1440px;
+//height: 720px;
 
 background: #2D2241;
 }
 
+.editor {
+  max-width: 544px;
+  width: 100%;
+}
+
 .editor__heading {
-  font-family: Open Sans;
 font-style: normal;
 font-weight: 200;
-font-size: 32px;
+font-size: 44px;
 line-height: 48px;
 color: #fff;
 font-family: 'Pacifico', cursive;
+margin: 0;
+margin-bottom: 48px;
 }
 
-.editor__titlebox{
-  position: absolute;
-width: 297.53px;
-height: 50.96px;
-left: 980.44px;
-top: 369px;
+.form {
+
+&__actions {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.editor__textarea{
-  position: absolute;
-width: 500px;
-height: 320px;
-left: 984px;
-top: 445px;
-border-radius: 1%;
+&__label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+&__textarea{
+width: 100%;
+border-radius: 8px; // border radius zalecana wilokrotnosc 4px 
+background: #fff;
+min-height: 30vh;
 
 }
 
-.editor__button{
-  width: 80px;
-  height: 27px;
-  
+&__button {
+  border : 1px solid #121232;
+  border-radius: 4px;
+  padding: 16px;
+  min-width: 200px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  &--save {
+    background: #27AE60;
+  }
+
+  &--load{
+    background: #2F80ED;
+  }
 }
 
-.editor__button--load {
-  left: 1304px;
-  top: 777px;
-  position: absolute;
-  border-radius: 10%;
-  background: #2F80ED;
-  border-color: #2F80ED;
 }
 
-.editor__button--save {
-  position: absolute;
-  left: 1400px; //1400
-  top: 777px;
-  background: #27AE60;
-  border-radius: 10%;
-  border-color: #27AE60;
-}
+
+
+
+

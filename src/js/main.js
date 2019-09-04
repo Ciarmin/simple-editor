@@ -2,16 +2,20 @@
 
 
 
+const editorArea = document.querySelector('.form__textarea--js');
+const loadText = document.querySelector('.form__button--load-js');
+const saveText = document.querySelector('.form__button--save-js');
 
-const editorArea = document.querySelector('.editor__textarea--js');
-const saveText = document.querySelector('.editor__button--save-js');
-const loadText = document.querySelector('.editor__button--load-js');
 
-saveText.addEventListener('click', () => {
-    localStorage.setItem('textinput' , editorArea.value); // ustawia argument o wartosci ,która bd zawierać textarea do localStorge .
+saveText.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('message' , editorArea.value); // ustawia argument o wartosci ,która bd zawierać textarea do localStorge .
 
-} );
+} )
 
-loadText.addEventListener('click', () => {
-    editorArea.value = localStorage.getItem('textinput'); // pobiera z localstorage 
-  });
+loadText.addEventListener('click', (e) => {
+    e.preventDefault();
+    editorArea.value = localStorage.getItem('message'); // pobiera z localstorage 
+  })
+
+  console.log(editorArea);
