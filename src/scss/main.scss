@@ -1,7 +1,27 @@
 @import "_normalize";
 @import "_variables";
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@keyframes background_pop_color {
+  0%{
+    color: #fff;
+  }
+  20% {
+    color: #00F0F6;
+  }
+  40% {
+    color: #DA015C;
+  }
+  60%{
+    color: #F61D64;
+  }
+  80% {
+    color: #F6F400;
+  }
+  100% {
+    color: #7EF600;
+  }
+}
 
 html {
   box-sizing: border-box;
@@ -26,9 +46,9 @@ background: #2D2241;
 .editor {
   max-width: 544px;
   width: 100%;
-}
 
-.editor__heading {
+
+&__heading {
 font-style: normal;
 font-weight: 200;
 font-size: 44px;
@@ -37,8 +57,13 @@ color: #fff;
 font-family: 'Pacifico', cursive;
 margin: 0;
 margin-bottom: 48px;
+
+&:hover{
+  animation: background_pop_color 5s ease-out infinite;
 }
 
+}
+}
 .form {
 
 &__actions {
@@ -52,6 +77,11 @@ margin-bottom: 48px;
   font-size: 14px;
   margin-bottom: 8px;
   color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  transition: transform 1s ease-in-out;
+&:hover {
+  transform: scale(2);
+}
 }
 
 &__textarea{
@@ -71,11 +101,21 @@ min-height: 30vh;
   letter-spacing: 0.5px;
 
   &--save {
-    background: #27AE60;
+    background: #043619;
+    transition: background .3s linear,  transform 2s ease-in-out;
+    &:hover{
+      background: #27AE60;
+      transform: rotate(-360deg);
+    }
   }
 
   &--load{
-    background: #2F80ED;
+    background: #003173;
+    transition: background .3s linear, transform 2s ease-in-out;
+    &:hover {
+      background: #2F80ED;
+      transform: rotate(360deg);
+    }
   }
 }
 
