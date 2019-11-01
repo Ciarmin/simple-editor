@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -308,6 +309,34 @@ template {
 [hidden] {
   display: none; }
 
+@-webkit-keyframes background_pop_color {
+  0% {
+    color: #fff; }
+  20% {
+    color: #00F0F6; }
+  40% {
+    color: #DA015C; }
+  60% {
+    color: #F61D64; }
+  80% {
+    color: #F6F400; }
+  100% {
+    color: #7EF600; } }
+
+@keyframes background_pop_color {
+  0% {
+    color: #fff; }
+  20% {
+    color: #00F0F6; }
+  40% {
+    color: #DA015C; }
+  60% {
+    color: #F61D64; }
+  80% {
+    color: #F6F400; }
+  100% {
+    color: #7EF600; } }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -332,16 +361,18 @@ body {
 .editor {
   max-width: 544px;
   width: 100%; }
-
-.editor__heading {
-  font-style: normal;
-  font-weight: 200;
-  font-size: 44px;
-  line-height: 48px;
-  color: #fff;
-  font-family: 'Pacifico', cursive;
-  margin: 0;
-  margin-bottom: 48px; }
+  .editor__heading {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 44px;
+    line-height: 48px;
+    color: #fff;
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+    margin-bottom: 48px; }
+    .editor__heading:hover {
+      -webkit-animation: background_pop_color 5s ease-out infinite;
+              animation: background_pop_color 5s ease-out infinite; }
 
 .form__actions {
   margin-top: 48px;
@@ -356,7 +387,17 @@ body {
   display: block;
   font-size: 14px;
   margin-bottom: 8px;
-  color: #fff; }
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  -o-transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out; }
+  .form__label:hover {
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2); }
 
 .form__textarea {
   width: 100%;
@@ -372,8 +413,28 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px; }
   .form__button--save {
-    background: #27AE60; }
+    background: #043619;
+    -webkit-transition: background .3s linear,  -webkit-transform 2s ease-in-out;
+    transition: background .3s linear,  -webkit-transform 2s ease-in-out;
+    -o-transition: background .3s linear,  transform 2s ease-in-out;
+    transition: background .3s linear,  transform 2s ease-in-out;
+    transition: background .3s linear,  transform 2s ease-in-out,  -webkit-transform 2s ease-in-out; }
+    .form__button--save:hover {
+      background: #27AE60;
+      -webkit-transform: rotate(-360deg);
+          -ms-transform: rotate(-360deg);
+              transform: rotate(-360deg); }
   .form__button--load {
-    background: #2F80ED; }
+    background: #003173;
+    -webkit-transition: background .3s linear, -webkit-transform 2s ease-in-out;
+    transition: background .3s linear, -webkit-transform 2s ease-in-out;
+    -o-transition: background .3s linear, transform 2s ease-in-out;
+    transition: background .3s linear, transform 2s ease-in-out;
+    transition: background .3s linear, transform 2s ease-in-out, -webkit-transform 2s ease-in-out; }
+    .form__button--load:hover {
+      background: #2F80ED;
+      -webkit-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+              transform: rotate(360deg); }
 
 /*# sourceMappingURL=main.css.map */
